@@ -2,16 +2,13 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
-import * as dotenv from 'dotenv';
+import configration from '../configration';
 
-const envPath = `.env.${process.env.NODE_ENV || 'development'}`;
-console.log(envPath, 'file path');
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: envPath,
       isGlobal: true,
-      load: [() => dotenv.config({ path: '.env' })],
+      load: [configration],
     }),
   ],
   controllers: [AppController],

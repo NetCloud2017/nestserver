@@ -27,9 +27,11 @@
     "@nestjs/core": "^11.0.1",
     "@nestjs/mapped-types": "*",
     "@nestjs/platform-express": "^11.0.1",
-    "config": "^3.3.12",
+    "@types/js-yaml": "^4.0.9",
+    "D": "^1.0.0",
     "cross-env": "^7.0.3",
     "dotenv": "^16.4.7",
+    "joi": "^17.13.3",
     "js-yaml": "^4.1.0",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1"

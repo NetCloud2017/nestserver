@@ -1,6 +1,7 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
 import { ConfigService } from '@nestjs/config';
+import { DatabaseConfig } from 'types/interface';
 
 @Controller()
 export class AppController {
@@ -11,10 +12,8 @@ export class AppController {
 
   @Get()
   getHello(): string {
-    const env = this.configService.get('env');
-    const name = this.configService.get('common_name');
-
-    console.log(env, name, 'config');
+    const env = this.configService.get<DatabaseConfig>('db');
+    console.log(env, 'config');
     return this.appService.getHello();
   }
 }
