@@ -11,8 +11,10 @@ export class AppController {
 
   @Get()
   getHello(): string {
-    const config = this.configService.get('env');
-    console.log(config, 'config');
+    const env = this.configService.get('env');
+    const name = this.configService.get('common_name');
+
+    console.log(env, name, 'config');
     return this.appService.getHello();
   }
 }

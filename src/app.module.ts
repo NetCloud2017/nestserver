@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
-import dotenv from 'dotenv';
+import * as dotenv from 'dotenv';
 
 const envPath = `.env.${process.env.NODE_ENV || 'development'}`;
 console.log(envPath, 'file path');
